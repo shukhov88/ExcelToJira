@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ExcelToJira.iml" filepath="$PROJECT_DIR$/.idea/modules/ExcelToJira.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ExcelToJira_main.iml" filepath="$PROJECT_DIR$/.idea/modules/ExcelToJira_main.iml" group="ExcelToJira" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ExcelToJira_test.iml" filepath="$PROJECT_DIR$/.idea/modules/ExcelToJira_test.iml" group="ExcelToJira" />
+    </modules>
+  </component>
+</project>
