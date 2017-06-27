@@ -37,4 +37,15 @@ public class Issue {
     public void setLinkedIssues(List<String> linkedIssues) {
         this.linkedIssues = linkedIssues;
     }
+
+    @Override
+    public String toString() {
+        return "Issue{" +
+                "summary='" + summary + '\'' +
+                ", labels=" + labels +
+                ", linkedIssues=" + linkedIssues +
+                '}';
+    }
 }
+
+
