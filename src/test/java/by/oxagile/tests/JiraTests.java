@@ -1,33 +1,26 @@
 package by.oxagile.tests;
 
-import by.oxagile.model.Issue;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.File;
+import java.io.IOException;
+import by.oxagile.appmanager.ExcelParser;
 
 
 public class JiraTests extends TestBase {
 
     @Test
-    public void testJira() throws InterruptedException {
+    public void testJira() throws InterruptedException, IOException {
 
-        List labels = new ArrayList<String>();
-        labels.add("acceptance");
-        labels.add("smoke");
-        labels.add("test");
+        File excelFile = new File("c:\\Users\\shukhovvg\\ExcelToJira\\src\\test\\resources\\test.xlsx");
+        ExcelParser excel = new ExcelParser(excelFile);
 
-        List linkedIssues = new ArrayList<String>();
-        linkedIssues.add("grd-312");
-        linkedIssues.add("grd-313");
-
-        Issue issue = new Issue("test", labels, linkedIssues);
-
-        app.jira().initTestCreation();
-        app.jira().fillTest(issue);
+        for (int i = 0; i < excel.readFromExcel(excelFile).size(); i++) {
+            app.jira().initTestCreation();
+            app.jira().fillTest(excel.readFromExcel(excelFile).get(i));
+        }
 
         System.out.println("success");
-
 
     }
 }

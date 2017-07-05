@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 
 public class JiraHelper extends BaseHelper {
@@ -65,8 +65,12 @@ public class JiraHelper extends BaseHelper {
         //set tested issues
         for (int i = 0; i < issue.getLinkedIssues().size(); i++) {
             wd.findElement(By.id("issuelinks-issues-textarea")).sendKeys(issue.getLinkedIssues().get(i));
+            click(By.id("issuelinks-issues-textarea"));
             wd.findElement(By.id("issuelinks-issues-textarea")).sendKeys(Keys.ENTER);
         }
+
+        //cancel
+        wd.findElements(By.cssSelector("a.cancel")).get(1).click();
 
     }
 }

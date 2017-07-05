@@ -8,34 +8,31 @@ public class Issue {
     private List<String> labels;
     private List<String> linkedIssues;
 
-    public Issue(String summary, List<String> labels, List<String> linkedIssues) {
-        this.summary = summary;
-        this.labels = labels;
-        this.linkedIssues = linkedIssues;
-    }
-
     public String getSummary() {
         return summary;
     }
 
-    public void setSummary(String summary) {
+    public Issue withSummary(String summary) {
         this.summary = summary;
+        return this;
     }
 
     public List<String> getLabels() {
         return labels;
     }
 
-    public void setLabels(List<String> labels) {
+    public Issue withLabels(List<String> labels) {
         this.labels = labels;
+        return this;
     }
 
     public List<String> getLinkedIssues() {
         return linkedIssues;
     }
 
-    public void setLinkedIssues(List<String> linkedIssues) {
+    public Issue withLinkedIssues(List<String> linkedIssues) {
         this.linkedIssues = linkedIssues;
+        return this;
     }
 
     @Override
