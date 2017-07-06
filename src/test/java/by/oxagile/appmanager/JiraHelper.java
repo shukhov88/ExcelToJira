@@ -15,7 +15,8 @@ public class JiraHelper extends BaseHelper {
         super(wd);
     }
 
-    public void initTestCreation() {
+    public void initTestCreation() throws InterruptedException {
+        Thread.sleep(2000);
         //init issue creation
         click(By.id("create_link"));
 
@@ -32,7 +33,7 @@ public class JiraHelper extends BaseHelper {
         }
     }
 
-    public void fillTest(Issue issue) {
+    public void fillTest(Issue issue, int srpintNumber) {
 
         //fill the summary of issue
         type(By.id("summary"), issue.getSummary());
@@ -45,7 +46,7 @@ public class JiraHelper extends BaseHelper {
 
         //select the sprint number
         click(By.id("customfield_10560-single-select"));
-        click(By.cssSelector("li.aui-list-item-li-sprint-5"));
+        click(By.cssSelector("li.aui-list-item-li-sprint-" + srpintNumber));
 
         //select priority
         click(By.id("priority-field"));
@@ -58,7 +59,7 @@ public class JiraHelper extends BaseHelper {
         click(By.id("assign-to-me-trigger"));
 
         //link with tested issues
-        click(By.cssSelector("[href='#tab-4']"));
+        click(By.cssSelector("[href='#tab-5']"));
         Select linkType = new Select(wd.findElement(By.name("issuelinks-linktype")));
         linkType.selectByValue("tests");
 
@@ -69,8 +70,7 @@ public class JiraHelper extends BaseHelper {
             wd.findElement(By.id("issuelinks-issues-textarea")).sendKeys(Keys.ENTER);
         }
 
-        //cancel
-        wd.findElements(By.cssSelector("a.cancel")).get(1).click();
-
+        //create
+        click(By.id("create-issue-submit"));
     }
 }

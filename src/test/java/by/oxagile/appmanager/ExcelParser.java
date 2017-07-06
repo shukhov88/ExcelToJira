@@ -24,7 +24,7 @@ public class ExcelParser {
     }
 
 
-    public List<Issue> readFromExcel(File file) throws IOException {
+    public List<Issue> readFromExcel() throws IOException {
         String path = file.getAbsolutePath();
         List<Issue> tests = new ArrayList<>();
 
