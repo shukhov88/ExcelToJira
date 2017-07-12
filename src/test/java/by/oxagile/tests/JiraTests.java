@@ -24,5 +24,6 @@ public class JiraTests extends TestBase {
             app.jira().initTestCreation();
             app.jira().fillTest(tests.get(i), 6);
         }
+
     }
 }

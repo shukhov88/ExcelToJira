@@ -49,11 +49,9 @@ public class JiraHelper extends BaseHelper {
         click(By.cssSelector("li.aui-list-item-li-sprint-" + srpintNumber));
 
         //select priority
-        click(By.id("priority-field"));
         if (issue.getLabels().contains("smoke")) {
             type(By.id("priority-field"), "Critical");
-        } else
-            type(By.id("priority-field"), "Major");
+        }
 
         //assign to me
         click(By.id("assign-to-me-trigger"));
