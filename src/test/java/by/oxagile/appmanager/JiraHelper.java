@@ -51,6 +51,7 @@ public class JiraHelper extends BaseHelper {
         //select priority
         if (issue.getLabels().contains("smoke")) {
             type(By.id("priority-field"), "Critical");
+            wd.findElement(By.id("priority-field")).sendKeys(Keys.ENTER);
         }
 
         //assign to me

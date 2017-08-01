@@ -22,7 +22,7 @@ public class JiraTests extends TestBase {
 
         for (int i = 0; i < tests.size(); i++) {
             app.jira().initTestCreation();
-            app.jira().fillTest(tests.get(i), 6);
+            app.jira().fillTest(tests.get(i), 7);
         }
 
     }
